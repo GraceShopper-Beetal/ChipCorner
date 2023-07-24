@@ -23,16 +23,9 @@ const CartPage = () => {
     parseInt(element)
   );
 
-  // Array of the Object ex/ [ {ProductId#1} : Quantity , {ProductId#2} : Quantity ]
-<<<<<<< HEAD
-  const arrayOfQuantity = Object.entries(arrayOfProductIdInteger) || [];
-  console.log(arrayOfQuantity);
-  const testing = Object.values(grabCartFromStorage);
-
-=======
   const arrayOfQuantity = Object.values(grabCartFromStorage) || [];
   console.log(arrayOfQuantity, 'HEELOELEEIJIGFU');
->>>>>>> main
+
   useEffect(() => {
     dispatch(getCartData({ arrayOfProductIdInteger }));
   }, []);
@@ -52,26 +45,23 @@ const CartPage = () => {
   };
 
   return (
-    <div id='container'>
-      <section id='headerSection'>
-        <header id='headerContainer'>
-          <div id='websiteTitle'>
+    <div id="container">
+      <section id="headerSection">
+        <header id="headerContainer">
+          <div id="websiteTitle">
             <h3>The Chip Corner</h3>
             <img
-              className='logoImage'
-              src='https://media.istockphoto.com/id/164661881/vector/nachos-cartoon.jpg?s=612x612&w=0&k=20&c=AFnAYL79XMt0VQSVHtPRTuJUR1z0Iwig8LCzC3083Ag='
+              className="logoImage"
+              src="https://media.istockphoto.com/id/164661881/vector/nachos-cartoon.jpg?s=612x612&w=0&k=20&c=AFnAYL79XMt0VQSVHtPRTuJUR1z0Iwig8LCzC3083Ag="
             />
           </div>
-          <nav id='navContainer'>
+          <nav id="navContainer">
             <AppRoutes />
             <Navbar />
           </nav>
         </header>
       </section>
-<<<<<<< HEAD
 
-=======
->>>>>>> main
       <div>
         {cartData ? (
           cartData.map((item, index) => (
@@ -79,19 +69,18 @@ const CartPage = () => {
               <h4>{item.title}</h4>
               <img src={item.imageUrl} alt={item.name} />
               <p>Price: ${item.price}</p>
-<<<<<<< HEAD
+
               <p> {testing[index]} </p>
-=======
+
               <h1>{arrayOfQuantity[index]}</h1>
->>>>>>> main
             </div>
           ))
         ) : (
           <p>Empty</p>
         )}
       </div>
+
       <div>
-<<<<<<< HEAD
         {arrayOfQuantity ? (
           arrayOfQuantity.map((item, index) => (
             <div key={index}>
@@ -104,11 +93,8 @@ const CartPage = () => {
       </div>
 
       <section id="footerSection">
-=======
         <h2>Total Amount: ${getTotalAmount()}</h2>
-      </div>
-      <section id='footerSection'>
->>>>>>> main
+
         <p> Copyrights © 2023 All Rights Reserved. The Chip Corner </p>
         <p> Beetal Team </p>
       </section>

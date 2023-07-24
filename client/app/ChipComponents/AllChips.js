@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../features/navbar/Navbar';
-import AppRoutes from './AppRoutes';
+import Navbar from '../../features/navbar/Navbar';
+import AppRoutes from '../AppRoutes';
 import { Link } from 'react-router-dom';
 
 const AllChips = ({ chips, filters, handleFilterChange }) => (

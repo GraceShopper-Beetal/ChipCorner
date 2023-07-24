@@ -36,7 +36,7 @@ router.get('/landingPage', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const chip = await Chips.findByPk(req.params.id);
-    console.log(chip);
+
     if (chip) {
       res.json(chip);
     } else {

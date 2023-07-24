@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
-import Navbar from '../../features/navbar/Navbar';
+import NavBar from '../../features/navbar/Navbar';
 import AppRoutes from '../AppRoutes';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCartData } from './CartPageSlice';
-
+import { Link } from 'react-router-dom';
 const CartPage = () => {
   const orderDataList = useSelector((state) => state.order.orders);
   const cartData = useSelector((state) => state.order.cartData);
@@ -47,19 +47,22 @@ const CartPage = () => {
   };
 
   return (
-    <div id='container'>
-      <section id='headerSection'>
-        <header id='headerContainer'>
-          <div id='websiteTitle'>
+    <div id="container">
+      <section id="headerSection">
+        <header id="headerContainer">
+          <div id="websiteTitle">
             <h3>The Chip Corner</h3>
             <img
-              className='logoImage'
-              src='https://media.istockphoto.com/id/164661881/vector/nachos-cartoon.jpg?s=612x612&w=0&k=20&c=AFnAYL79XMt0VQSVHtPRTuJUR1z0Iwig8LCzC3083Ag='
+              className="logoImage"
+              src="https://media.istockphoto.com/id/164661881/vector/nachos-cartoon.jpg?s=612x612&w=0&k=20&c=AFnAYL79XMt0VQSVHtPRTuJUR1z0Iwig8LCzC3083Ag="
             />
           </div>
-          <nav id='navContainer'>
+          <nav id="navContainer">
+            <Link to="/"> Home </Link>
+            <Link to="/allchips"> All Chips </Link>
+            <Link to="/signup">Sign Up</Link>
             <AppRoutes />
-            <Navbar />
+            <NavBar />
           </nav>
         </header>
       </section>
@@ -73,7 +76,6 @@ const CartPage = () => {
               <p>Price: ${item.price}</p>
 
               <h1>{arrayOfQuantity[index]}</h1>
-
             </div>
           ))
         ) : (
@@ -81,11 +83,9 @@ const CartPage = () => {
         )}
       </div>
       <div>
-
         <h2>Total Amount: ${getTotalAmount()}</h2>
       </div>
-      <section id='footerSection'>
-
+      <section id="footerSection">
         <p> Copyrights © 2023 All Rights Reserved. The Chip Corner </p>
         <p> Beetal Team </p>
       </section>

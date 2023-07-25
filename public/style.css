@@ -269,6 +269,7 @@ img.productImage2 {
   text-align: center;
   margin-top: auto;
   display: flex;
+  justify-content: center;
 }
 a {
   text-decoration: none;

@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 
 const {
   db,
   models: { User },
-} = require("../server/db");
-const Chips = require("../server/db/models/Chips");
+} = require('./db');
+const Chips = require('./db/models/Chips');
 
 //title, description,size,baked or not baked, ingrediants,nutrional
 
@@ -172,20 +172,20 @@ const chips = [
  */
 async function seed() {
   await db.sync({ force: true }); // clears db and matches models to tables
-  console.log("db synced!");
+  console.log('db synced!');
 
   // Creating Users
   const users = await Promise.all([
     User.create({
-      username: "cody135",
-      email: "cody135@gmail.com",
-      password: "123",
+      username: 'cody135',
+      email: 'cody135@gmail.com',
+      password: '123',
       admin: true,
     }),
     User.create({
-      username: "murphy246",
-      email: "murphy246@gmail.com",
-      password: "123",
+      username: 'murphy246',
+      email: 'murphy246@gmail.com',
+      password: '123',
       admin: true,
     }),
   ]);
@@ -213,16 +213,16 @@ async function seed() {
  The `seed` function is concerned only with modifying the database.
 */
 async function runSeed() {
-  console.log("seeding...");
+  console.log('seeding...');
   try {
     await seed();
   } catch (err) {
     console.error(err);
     process.exitCode = 1;
   } finally {
-    console.log("closing db connection");
+    console.log('closing db connection');
     await db.close();
-    console.log("db connection closed");
+    console.log('db connection closed');
   }
 }
 

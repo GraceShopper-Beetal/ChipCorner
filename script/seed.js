@@ -183,10 +183,10 @@ async function seed() {
       admin: true,
     }),
     User.create({
-      username: 'murphy246',
-      email: 'murphy246@gmail.com',
-      password: '123',
-      admin: true,
+      username: "murphy246",
+      email: "murphy246@gmail.com",
+      password: "123",
+      admin: false,
     }),
   ]);
 

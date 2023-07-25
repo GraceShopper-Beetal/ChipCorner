@@ -3,8 +3,8 @@
 const {
   db,
   models: { User },
-} = require('./db');
-const Chips = require('./db/models/Chips');
+} = require('../server/db');
+const Chips = require('../server/db/models/Chips');
 
 //title, description,size,baked or not baked, ingrediants,nutrional
 
